@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація | EcoCharm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5dc;
+            color: #4e342e;
+            line-height: 1.6;
+        }
+
+        /* Навігація */
+        nav {
+            background-color: #8b4513;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e6d5b8;
+        }
+
+        /* Хедер */
+        header {
+            text-align: center;
+            padding: 80px 0;
+            margin-bottom: 30px;
+            position: relative;
+            background: linear-gradient(rgba(230, 213, 184, 0.7), rgba(230, 213, 184, 0.7)), 
+                        url('https://i.pinimg.com/736x/d1/38/40/d1384059e429bc896e74718e5f789b90.jpg') center/cover no-repeat;
+            color: #4e342e;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Контейнер форми */
+        .container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h1.form-title {
+            color: #6b4f2c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d8e3d5;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #6b4f2c;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #6b4f2c;
+        }
+
+        .eco-badge {
+            background-color: #e8f4ea;
+            color: #6b4f2c;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links li {
+                margin: 5px 10px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навігація -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/b1/1c/2e/b11c2e7af82de3b95d8c7725f33e00e0.jpg" alt="Лого EcoCharm">
+                <h1>EcoCharm</h1>
+            </div>
+             <ul class="nav-links">
+          <li><a href="головна.html">Головна</a></li>
+          <li><a href="проо нас.html">Про нас</a></li>
+          <li><a href="обличчя.html">Обличчя</a></li>
+          <li><a href="тіло.html">Тіло</a></li>
+          <li><a href="каталог.html">Каталог</a></li>
+          <li><a href="реєстрація.html">Реєстрація</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Хедер -->
+    <header>
+        <h1>Реєстрація</h1>
+        <p>Станьте частиною нашої еко-сім'ї</p>
+    </header>
+
+    <!-- Форма -->
+    <div class="container">
+            <!-- Особиста інформація -->
+            <div class="form-group">
+                <label for="fullName">Повне ім'я *</label>
+                <input type="text" id="fullName" name="fullName" required minlength="2" maxlength="50">
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Електронна пошта *</label>
+                <input type="email" id="email" name="email" required>
+               
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Номер телефону *</label>
+                <input type="tel" id="phone" name="phone" pattern="\+380\d{9}" required placeholder="+380XXXXXXXXX">
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="birthDate">Дата народження *</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+             
+            </div>
+            
+            <!-- Паролі -->
+            <div class="form-group">
+                <label for="password">Пароль *</label>
+                <input type="password" id="password" name="password" required minlength="8">
+              
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Підтвердження паролю *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+               
+            </div>
+            
+            <!-- Додаткові поля -->
+            <div class="form-group">
+                <label for="skinType">Тип шкіри</label>
+                <select id="skinType" name="skinType">
+                    <option value="">-- Оберіть ваш тип шкіри --</option>
+                    <option value="normal">Нормальна</option>
+                    <option value="dry">Суха</option>
+                    <option value="oily">Жирна</option>
+                    <option value="combination">Комбінована</option>
+                    <option value="sensitive">Чутлива</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="subscribe" checked> Отримувати еко-поради та спецпропозиції
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required> Я погоджуюсь з <a href="#" style="color: #4a7c59;">умовами використання</a> *
+                </label>
+              
+            </div>
+            
+            <button type="submit">Зареєструватися</button>
+            
+            <div id="successMessage" class="success">
+               
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('ecoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Валідація імені
+            const fullName = document.getElementById('fullName');
+            if (!fullName.checkValidity()) {
+                document.getElementById('fullNameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('fullNameError').style.display = 'none';
+            }
+
+            // Валідація email
+            const email = document.getElementById('email');
+            if (!email.checkValidity()) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            // Валідація телефону
+            const phone = document.getElementById('phone');
+            if (!phone.checkValidity()) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+
+            // Валідація дати народження
+            const birthDate = document.getElementById('birthDate');
+            if (birthDate.value) {
+                const birthDateObj = new Date(birthDate.value);
+                const today = new Date();
+                const minAgeDate = new Date(today.getFullYear() - 14, today.getMonth(), today.getDate());
+                
+                if (birthDateObj > minAgeDate) {
+                    document.getElementById('birthDateError').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('birthDateError').style.display = 'none';
+                }
+            } else {
+                document.getElementById('birthDateError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Валідація паролю
+            const password = document.getElementById('password');
+            if (!password.checkValidity() || !/(?=.*[a-zA-Z])(?=.*\d)/.test(password.value)) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+
+            // Перевірка збігу паролів
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (password.value !== confirmPassword.value) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').style.display = 'none';
+            }
+
+            // Перевірка умов використання
+            const terms = document.querySelector('input[name="terms"]');
+            if (!terms.checked) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('termsError').style.display = 'none';
+            }
+
+            // Якщо все валідне
+            if (isValid) {
+                document.getElementById('successMessage').style.display = 'block';
+                // Тут буде відправка форми на сервер
+                setTimeout(() => {
+                    alert('Реєстрація успішна! Тепер ви можете користуватися всіма перевагами EcoCharm.');
+                    // Перенаправлення на головну сторінку
+                    window.location.href = "https://sites.google.com/view/ecocharml/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0-%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0";
+                }, 1500);
+            }
+        });
+
+        // Реальний час валідації
+        document.getElementById('email').addEventListener('input', function() {
+            if (!this.checkValidity()) {
+                document.getElementById('emailError').style.display = 'block';
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+        });
+
+        document.getElementById('phone').addEventListener('input', function() {
+            if (!this.checkValidity()) {
+                document.getElementById('phoneError').style.display = 'block';
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            if (!this.checkValidity() || !/(?=.*[a-zA-Z])(?=.*\d)/.test(this.value)) {
+                document.getElementById('passwordError').style.display = 'block';
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

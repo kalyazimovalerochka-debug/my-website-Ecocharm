@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCharm - Каталог</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5dc;
+            color: #4e342e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Навігація */
+        nav {
+            background-color: #8b4513;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e6d5b8;
+        }
+
+        /* Хедер */
+        header {
+            text-align: center;
+            padding: 80px 0;
+            margin-bottom: 30px;
+            position: relative;
+            background: linear-gradient(rgba(230, 213, 184, 0.7), rgba(230, 213, 184, 0.7)), 
+                        url('https://i.pinimg.com/736x/1e/fa/f7/1efaf7f1b57dca6aa498934d8df22213.jpg') center/cover no-repeat;
+            color: #4e342e;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Секція каталогу */
+        .catalog-section {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .catalog-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .catalog-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .catalog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .catalog-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .catalog-list {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .catalog-list h2 {
+            color: #6b4f2c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c8b98d;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .catalog-list ul {
+            list-style-type: none;
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        .catalog-list li {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+            break-inside: avoid;
+            transition: color 0.3s;
+        }
+
+        .catalog-list li:hover {
+            color: #8b4513;
+        }
+
+        .catalog-list li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Контакти */
+       .contact-info {
+    background-color: #e6d5b8;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    color: #6b4f2c;
+        }
+
+       .contact-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #6b4f2c;
+    border-bottom: 2px solid #c8b98d;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+         }
+
+
+        .contact-details {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #8b4513;
+            color: white;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 15px);
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+
+            .double-card {
+                flex-direction: column;
+            }
+
+            .double-card .product-card {
+                width: 100%;
+            }
+
+            header {
+                padding: 50px 0;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навігація -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/b1/1c/2e/b11c2e7af82de3b95d8c7725f33e00e0.jpg" alt="Лого EcoCharm">
+                <h1>EcoCharm</h1>
+            </div>
+             <ul class="nav-links">
+          <li><a href="головна.html">Головна</a></li>
+          <li><a href="проо нас.html">Про нас</a></li>
+          <li><a href="обличчя.html">Обличчя</a></li>
+          <li><a href="тіло.html">Тіло</a></li>
+          <li><a href="каталог.html">Каталог</a></li>
+          <li><a href="реєстрація.html">Реєстрація</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container header-content">
+            <h1>Каталог</h1>
+            <p>Обирайте натуральне — обирайте себе</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="catalog-section">
+            <div class="catalog-image">
+                <img src="https://i.pinimg.com/736x/6a/1a/a0/6a1aa0161ef07fe94f91600f9f12e4b5.jpg" alt="Натуральна косметика EcoCharm">
+            </div>
+            
+            <div class="catalog-list">
+                <h2>Наша продукція</h2>
+                <ul>
+                    <li>Олії для обличчя</li>
+                    <li>Скраби для тіла</li>
+                    <li>Креми для обличчя</li>
+                    <li>Сироватки для шкіри</li>
+                    <li>Бальзами для губ</li>
+                    <li>Гелі для душу</li>
+                    <li>Маски для обличчя</li>
+                    <li>Тоніки та міцелярна вода</li>
+                    <li>Креми для рук і тіла</li>
+                    <li>Патчі для очей</li>
+                    <li>Масажні олії</li>
+                    <li>Натуральне мило</li>
+                    <li>Засоби для очищення обличчя</li>
+                    <li>Креми навколо очей</li>
+                    <li>Бальзами для тіла</li>
+                    <li>Дезодоранти</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Контакти -->
+        <section class="contact-info">
+            <h2>Контактна інформація</h2>
+            <div class="contact-details">
+                <p>Інтернет-магазин EcoCharm</p>
+                <p>Васильків, вул. Декабристів, 43</p>
+                <p>kalyazimovalerochka@gmail.com</p>
+                <p>063-211-39-59</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>© 2025 EcoCharm. Всі права захищені.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
